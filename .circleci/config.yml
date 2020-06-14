@@ -1,19 +1,19 @@
 version: 2.1
 
-orbs:
-  python: circleci/python@0.2.1
-
 jobs:
   build-and-test:
-    executor: python/default
+    machine: true
     steps:
       - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
+      # - setup_remote_docker
       - run:
-          command: ./manage.py test
-          name: Test
+          command: |
+            pyenv global 3.5.2
+            pip install pytest-docker pytest requests
+          name: Install pytest-docker
+      - run:
+          command: pytest tests.py -v
+          name: Run integration-tests
 
 workflows:
   main:
