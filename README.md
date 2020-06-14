@@ -19,7 +19,7 @@ It will return JSON with all required information.
 Tests are done using pytest-docker
 
 ```sh
-pip3 install pytest-docker
+pip3 install pytest-docker pytest requests
 ```
 
 should sort out requirements. Then you can run `pytest tests.py` and integration tests should start.
