@@ -1,0 +1,21 @@
+version: 2.1
+
+jobs:
+  build-and-test:
+    machine: true
+    steps:
+      - checkout
+      # - setup_remote_docker
+      - run:
+          command: |
+            pyenv global 3.5.2
+            pip install pytest-docker pytest requests
+          name: Install pytest-docker
+      - run:
+          command: pytest tests.py -v
+          name: Run integration-tests
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
