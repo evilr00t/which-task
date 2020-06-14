@@ -70,6 +70,15 @@ def test_proxy_user_agent(proxy_service):
     r = requests.get(url, proxies=proxies, verify=False).json()
     assert r['headers']['User-Agent'] == 'FooBar'
 
+def test_proxy_add_header(proxy_service):
+    url = "http://httpbin.org/get"
+    proxies = {
+        "https": proxy_service,
+        "http": proxy_service
+    }
+    r = requests.get(url, proxies=proxies, verify=False).json()
+    assert r['headers']['X-Test'] == 'True'
+
 def test_proxy_removed_header(proxy_service):
     url = "http://httpbin.org/get"
     proxies = {
