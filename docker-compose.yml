@@ -1,0 +1,13 @@
+version: '2'
+services:
+  which-proxy:
+    image: which-proxy
+    build: .
+    environment:
+      STATUS_REFRESH_PERIOD: 10
+      UNSET_HTTP_HEADERS: Accept
+      SET_HTTP_HEADERS: 'X-Test: True, User-Agent: FooBar'
+    ports:
+      - "8000:8000"
+      - "8080:8080"
+
