@@ -1,8 +1,8 @@
 import os
 from jinja2 import Environment
 
-SET_HEADERS = os.environ.get("SET_HTTP_HEADERS", [])
-UNSET_HEADERS = os.environ.get("UNSET_HTTP_HEADERS", [])
+SET_HEADERS = os.environ.get("SET_HTTP_HEADER", [])
+UNSET_HEADERS = os.environ.get("UNSET_HTTP_HEADER", [])
 
 
 def generate_config():

@@ -5,8 +5,8 @@ services:
     build: .
     environment:
       STATUS_REFRESH_PERIOD: 10
-      UNSET_HTTP_HEADERS: Accept
-      SET_HTTP_HEADERS: 'X-Test: True, User-Agent: FooBar'
+      UNSET_HTTP_HEADER: Accept
+      SET_HTTP_HEADER: 'X-Test: True, User-Agent: FooBar'
     ports:
       - "8000:8000"
       - "8080:8080"
