@@ -1,5 +1,8 @@
 # README
 
+![CircleCI](https://circleci.com/gh/evilr00t/which-task.svg?style=svg&circle-token=78420d96ea29c9e5185dde6ea7542e385827f54a)
+
+
 ## Usage
 
 ```sh
