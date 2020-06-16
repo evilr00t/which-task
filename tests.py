@@ -79,6 +79,15 @@ def test_proxy_add_header(proxy_service):
     r = requests.get(url, proxies=proxies, verify=False).json()
     assert r['headers']['X-Test'] == 'True'
 
+def test_proxy_check_host_header(proxy_service):
+    url = "http://httpbin.org/headers"
+    proxies = {
+        "https": proxy_service,
+        "http": proxy_service
+    }
+    r = requests.get(url, proxies=proxies, verify=False).json()
+    assert r['headers']['Host'] == 'e-dot.uk'
+
 def test_proxy_removed_header(proxy_service):
     url = "http://httpbin.org/get"
     proxies = {

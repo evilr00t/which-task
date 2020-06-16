@@ -6,7 +6,7 @@ services:
     environment:
       STATUS_REFRESH_PERIOD: 10
       UNSET_HTTP_HEADER: Accept
-      SET_HTTP_HEADER: 'X-Test: True, User-Agent: FooBar'
+      SET_HTTP_HEADER: 'X-Test: True, User-Agent: FooBar, Host: e-dot.uk'
     ports:
       - "8000:8000"
       - "8080:8080"
