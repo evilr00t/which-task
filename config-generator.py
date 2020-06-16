@@ -24,6 +24,7 @@ Listen 8080
 
 <VirtualHost *:8080>
 ProxyRequests On
+ProxyPreserveHost On
 
 <Proxy *>
     # ACL
